@@ -1,0 +1,8 @@
+---
+- hosts: localhost 
+  tasks:
+    - name: user creation
+      user:
+        name: prasanta
+        state: present
+
