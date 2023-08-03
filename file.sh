@@ -1,6 +1,8 @@
 #!/bin/bash
+datevalue=`date +%d |cut -c2`
 cd /tmp
-if [ -f a.txt ]
+filevalue=`ls -l a.txt|tr -s ' '|cut -d ' ' -f7`
+if [ $filevalue = $datevalue ]
 then 
 echo "file is available"
 else
