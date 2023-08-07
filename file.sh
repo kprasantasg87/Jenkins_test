@@ -5,7 +5,7 @@ filevalue=`ls -l a.txt|tr -s ' '|cut -d ' ' -f7`
 if [ $filevalue = $datevalue ]
 then 
 echo "file is available"
-echo "Thank you linux OSss"
+echo "Thank you linux OSssss"
 else
 echo "file is not available"
 fi 
