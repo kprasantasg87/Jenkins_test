@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+    - name: service up
+      service:
+        name: httpd
+        state: restarted
