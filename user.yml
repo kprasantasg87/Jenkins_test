@@ -5,4 +5,9 @@
       user:
         name: prasanta
         state: present
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: present
 
