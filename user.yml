@@ -3,11 +3,16 @@
   tasks:
     - name: user creation
       user:
-        name: prasanta
+        name: prasantaa
         state: present
   tasks:
     - name: install httpd
       yum:
         name: httpd
         state: present
+  tasks:
+    - name: httpd start
+      service:
+        name: httpd
+        state: start
 
