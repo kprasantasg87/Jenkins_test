@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+    - name: jenkins start 
+      systemd:
+        name: jenkins
+        state: started
