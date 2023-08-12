@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+    - name: java installation
+      yum:
+        name: java
+        state: present
