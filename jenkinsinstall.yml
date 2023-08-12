@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+    - name: jenkins install
+      yum:
+        name: jenkins
+        state: present
