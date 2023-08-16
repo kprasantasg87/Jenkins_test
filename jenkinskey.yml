@@ -3,5 +3,5 @@
   tasks:
     - name: add key
       rpm_key:
-        key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+        key: https://pkg.jenkins.io/redhat/jenkins.io.key
         state: present
