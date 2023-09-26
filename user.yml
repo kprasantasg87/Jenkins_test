@@ -3,6 +3,6 @@
   tasks:
     - name: user creation
       user:
-        name: prasantaa
+        name: prasantaa1
         state: present
 
