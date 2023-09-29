@@ -6,6 +6,7 @@ if [ $filevalue = $datevalue ]
 then 
 echo "file is available"
 echo "Thank you linux OSssss"
+echo "my name is prasanta"
 else
 echo "file is not available"
 fi 
