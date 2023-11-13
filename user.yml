@@ -6,5 +6,15 @@
       user:
         name: prasanta
         state: present
+
+    - name: docker install
+      yum:
+        name: docker
+        state: present
+
+    - name: docker up
+      service:
+        name: docker
+        state: started
      
 
