@@ -3,6 +3,8 @@
   become: true
   tasks:
     - name: user creation
-      command: useradd prasanta
-      become: yes
+      user:
+        name: prasanta
+        state: present
+     
 
