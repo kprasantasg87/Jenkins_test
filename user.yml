@@ -19,10 +19,10 @@
     - name: dockerfile
       docker_image:
         name: ubuntu
-        path: /Jenkins_test/
+        source: pull
     - name: docker container
       docker_container:
-        name: ubuntu container
+        name: docker
         image: ubuntu
         state: started
         ports:
