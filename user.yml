@@ -16,5 +16,19 @@
       service:
         name: docker
         state: started
+    - name: dockerfile
+      docker_image:
+        name: ubuntu
+        path: /Jenkins_test/
+    - name: docker container
+      docker_container:
+        name: ubuntu container
+        image: ubuntu
+        state: started
+        ports:
+          - "82:80"
+    
+
+    
      
 
