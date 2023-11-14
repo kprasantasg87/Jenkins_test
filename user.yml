@@ -20,7 +20,7 @@
       command: sudo docker build -t containern .
 
     - name: port
-      command: docker run -d -p 8080:80 --name nginxma containern
+      command: sudo docker run -d -p 8080:80 --name nginxma containern
     
 
     
