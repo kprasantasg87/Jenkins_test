@@ -17,7 +17,7 @@
         name: docker
         state: started
     - name: docker command execute
-      command: docker build -t containern /Jenkins_test/dockerfile
+      command: sudo docker build -t containern .
 
     - name: port
       command: docker run -d -p 8080:80 --name nginxma containern
