@@ -16,17 +16,11 @@
       service:
         name: docker
         state: started
-    - name: dockerfile
-      docker_image:
-        name: ubuntu
-        source: pull
-    - name: docker container
-      docker_container:
-        name: docker
-        image: ubuntu
-        state: started
-        ports:
-          - "82:80"
+    - name: docker command execute
+      command: docker build -t containern /Jenkins_test/dockerfile
+
+    - name: port
+      command: docker run -d -p 8080:80 --name nginxma containern
     
 
     
