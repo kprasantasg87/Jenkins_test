@@ -20,7 +20,7 @@
         dest: /etc/yum.repos.d/jenkins.repo
     - name: add key
       rpm_key:
-        key: https://pkg.jenkins.io/redhat/jenkins.io.key
+        key: https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
         state: present
     - name: jenkins install
       yum:
