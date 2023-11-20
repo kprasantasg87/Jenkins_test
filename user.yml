@@ -1,7 +1,35 @@
 ---
 - hosts: localhost 
   become: true
+  vars:
+    packages:
+      - git
+      - python
+      - wget
+      - java-17
+      - docker
   tasks:
+    - name: isntall package
+      yum:
+        name: "{{item}}"
+        state: present
+      with_items: "{{packages}}"
+    - name: jenkins installation
+      get_url:
+        url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+        dest: /etc/yum.repos.d/jenkins.repo
+    - name: add key
+      rpm_key:
+        key: https://pkg.jenkins.io/redhat/jenkins.io.key
+        state: present
+    - name: jenkins install
+      yum:
+        name: jenkins
+        state: present
+    - name: jenkins start 
+      systemd:
+        name: jenkins
+        state: started
     - name: user creation
       user:
         name: prasanta
