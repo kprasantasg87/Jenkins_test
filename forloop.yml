@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  vars:
+    packages:
+      - git
+      - nginx
+      - python2
+  tasks:
+    - name: pck ins
+      apt:
+        name: "{{item}}"
+        state: present
+      with_items: "{{packages}}"    
