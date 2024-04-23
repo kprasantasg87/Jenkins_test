@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    stages{
+        stage('git checkout'){
+            steps{
+                git branch: 'main', credentialsId: 'root', url: 'https://github.com/kprasantasg87/Jenkins_test.git'
+            }
+        }
+        stage('ansible execution'){
+            steps{
+                sh 'ansible-playbook forloop.yml'
+            }
+        }
+    }
+}
