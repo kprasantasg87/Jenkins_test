@@ -7,6 +7,7 @@ then
 echo "file is available"
 echo "Thank you linux OSssss"
 echo "my name is prasanta"
+echo "prasanta"
 else
 echo "file is not available"
 fi 
