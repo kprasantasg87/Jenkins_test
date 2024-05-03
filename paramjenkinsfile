@@ -1,0 +1,28 @@
+pipeline{
+    agent any 
+    parameters {
+  choice choices: ['UAT', 'PREPROD', 'PROD'], description: 'Choose an ENV value', name: 'ENV'
+    }
+    stages{
+        stage('git checkout'){
+            steps{
+                script{
+                    if (params.ENV == 'UAT'){
+                    git branch: 'main', credentialsId: 'jenkins', url: 'https://github.com/kprasantasg87/Jenkins_test.git'    
+                    }
+                }
+                
+            }
+        }
+        stage('shell execution'){
+            steps{
+                script{
+                    if(params.ENV == 'UAT'){
+                      sh 'bash example.sh'  
+                    }
+                }
+                
+            }
+        }
+    }
+}
