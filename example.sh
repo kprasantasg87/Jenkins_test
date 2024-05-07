@@ -5,4 +5,5 @@ then
         echo "file is available"
 else
         echo "file is unavailable"
+        touch a.txt
 fi
