@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+    - name: install of python
+      apt-get:
+        name: python
+        state: present
