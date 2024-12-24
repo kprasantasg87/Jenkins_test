@@ -4,5 +4,5 @@
   tasks:
     - name: install of python
       apt:
-        name: python
+        name: python3
         state: present
