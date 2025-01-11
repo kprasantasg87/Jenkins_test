@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+    stages{
+        stage('git checkout'){
+            steps{
+            git branch: 'main', credentialsId: 'jenkins', url: 'https://github.com/kprasantasg87/Jenkins_test.git'    
+            }
+        }
+        stage('ansibleplaybok run'){
+            steps{
+                sh 'ansible-playbook ansibleeample.yml'
+            }
+        }
+      
+    }
+}
