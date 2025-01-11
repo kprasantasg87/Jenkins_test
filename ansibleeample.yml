@@ -5,4 +5,4 @@
       apt:
         name: nginx
         state: present
-     apt:
+     
