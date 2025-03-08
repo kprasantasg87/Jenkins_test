@@ -1,7 +1,7 @@
 provider aws {
     region="ap-south-1"
-    access_key="AKIA2YIB77KPOX23WKHU"
-    secret_key="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"
+    access_key="AKIA2YIB77KPOBS46RGJ"
+    secret_key="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"
 }
 
 resource aws_vpc "MVPC"{
