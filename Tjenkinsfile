@@ -23,10 +23,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 sh '''
-                terraform plan -var="aws_access_key=${AWS_ACCESS_KEY_ID }" \
-                               -var="aws_secret_key=${AWS_SECRET_ACCESS_KEY}" \
-                               -var="region=ap-south-1" \
-                               -input=false -out=tfplan
+                terraform plan  -input=false -out=tfplan
                 '''
             }
         }
