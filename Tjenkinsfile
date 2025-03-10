@@ -20,6 +20,11 @@ pipeline {
                 sh 'terraform init'
             }
         }
+stage('Terraform Plan') {   // ✅ ADD THIS STAGE
+            steps {
+                sh 'terraform plan -out=tfplan'  // Generates tfplan file
+            }
+        }
       
         stage('Terraform Apply') {
             steps {
