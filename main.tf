@@ -1,11 +1,4 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.90.0"  # Change this to 5.x if needed
-    }
-  }
-}
+
 
 provider "aws" {
   region = "ap-southeast-1"
