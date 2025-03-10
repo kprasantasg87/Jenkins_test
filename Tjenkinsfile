@@ -22,13 +22,13 @@ pipeline {
         }
 stage('Terraform Plan') {   // ✅ ADD THIS STAGE
             steps {
-                sh 'terraform plan -out=tfplan'  // Generates tfplan file
+                sh 'terraform plan -input=false -out=tfplan'  // Generates tfplan file
             }
         }
       
         stage('Terraform Apply') {
             steps {
-                sh 'terraform apply -auto-approve tfplan'
+                sh 'terraform apply --auto-approve tfplan'
             }
         }
     }
