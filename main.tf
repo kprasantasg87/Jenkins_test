@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "awsinstance1" {
-  ami                         = "ami-099b3d23e336c2e83"
+  ami                         = "ami-0b5a4445ada4a59b1"
   instance_type               = "t2.micro"
   associate_public_ip_address = true
 
