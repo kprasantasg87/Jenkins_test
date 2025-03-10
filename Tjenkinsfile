@@ -20,13 +20,7 @@ pipeline {
                 sh 'terraform init'
             }
         }
-        stage('Terraform Plan') {
-            steps {
-                sh '''
-                terraform plan  -input=false -out=tfplan
-                '''
-            }
-        }
+      
         stage('Terraform Apply') {
             steps {
                 sh 'terraform apply -auto-approve tfplan'
