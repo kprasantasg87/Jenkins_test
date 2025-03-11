@@ -45,7 +45,7 @@ resource "aws_ebs_volume" "EBS"{
 
 resource "aws_instance" "Instance"{
 
-ami= "ami-0c50b6f7dc3701ddd"
+ami= "ami-0672fd5b9210aa093"
 instance_type = "t2.micro"
 key_name = "EBS-VOL"
 availability_zone = "ap-southeast-1a"
