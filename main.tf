@@ -28,7 +28,7 @@ resource "aws_route_table" "RT"{
 }
 
 resource "aws_route_table_association" "ARTA" {
-   subnet_id = aws_subnet.SUB1.id
+   subnet_id = aws_subnet.SUB.id
    route_table_id = aws_route_table.RT.id
 }
 
@@ -49,7 +49,7 @@ ami= "ami-0c50b6f7dc3701ddd"
 instance_type = "t2.micro"
 key_name = "EBS-VOL"
 availability_zone = "ap-southeast-1a"
-subnet_id = aws_subnet.SUB1.id
+subnet_id = aws_subnet.SUB.id
 associate_public_ip_address =  true
    tags = {
       Name = "Instance"
