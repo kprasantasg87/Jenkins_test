@@ -1,7 +1,7 @@
 ---
-- hosts: server
+- hosts: localhost
   tasks:
     - name:
-      yum:
-        name: httpd
+      apt-get:
+        name: ngninx
         state: present
