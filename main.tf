@@ -61,5 +61,6 @@ resource aws_instance "instance"{
   #!/bin/bash
   sudo apt-get update -y
   sudo apt-get install nginx -y
+  sudo git clone https://github.com/kprasantasg87/Jenkins_test.git repo
 EOF
 }
