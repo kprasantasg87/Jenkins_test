@@ -47,7 +47,7 @@ resource aws_security_group "SG"{
   }
 }
 resource aws_instance "instance"{
-  ami="ami-0c50b6f7dc3701ddd"
+  ami="ami-0672fd5b9210aa093"
   instance_type="t2.micro"
   key_name="EBS-VOL"
   subnet_id = aws_subnet.SUBNET.id
