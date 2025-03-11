@@ -56,7 +56,6 @@ resource aws_instance "instance"{
   tags={
     name="instance"
   }
-
   user_data = <<-EOF
   #!/bin/bash
   sudo apt-get update -y
