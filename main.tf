@@ -59,6 +59,6 @@ resource aws_instance "instance"{
 
   user_data=<<-EOF
   #!/bin/bash
-  sudo yum install python -y
+  sudo yum install nginx -y
 EOF
 }
