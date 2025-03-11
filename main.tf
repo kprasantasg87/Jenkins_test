@@ -59,7 +59,7 @@ resource aws_instance "instance"{
   user_data = <<-EOF
   #!/bin/bash
   sudo apt-get update -y
-  sudo apt-get install nginx -y
+  sudo apt-get install ansible -y
   sudo apt-get install git -y
   cd /home/ubuntu
   sudo git clone https://github.com/kprasantasg87/Jenkins_test.git 
