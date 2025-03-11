@@ -60,6 +60,6 @@ resource aws_instance "instance"{
   user_data=<<-EOF
   #!/bin/bash
   sudo apt-get update -y
-  sudo yum install nginx -y
+  sudo apt-get install nginx -y
 EOF
 }
