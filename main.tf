@@ -49,7 +49,7 @@ resource aws_security_group "SG"{
 resource aws_instance "instance"{
   ami="ami-0c50b6f7dc3701ddd"
   instance_type="t2.micro"
-  key_name="demo"
+  key_name="EBS-VOL"
   subnet_id = aws_subnet.SUBNET.id
   associate_public_ip_address = true
   vpc_security_group_ids = [aws_security_group.SG.id]
@@ -60,4 +60,5 @@ resource aws_instance "instance"{
   user_data=<<-EOF
   #!/bin/bash
   sudo yum install python -y
+EOF
 }
