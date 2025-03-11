@@ -5,7 +5,7 @@ resource aws_vpc "VPC"{
 resource aws_subnet "SUBNET"{
   vpc_id=aws_vpc.VPC.id
   cidr_block="10.0.0.16/28"
-  availability_zone="ap-south-1a"
+  availability_zone="ap-southeast-1a"
 
 }
 resource aws_internet_gateway "IGW"{
