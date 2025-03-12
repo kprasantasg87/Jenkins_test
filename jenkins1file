@@ -1,8 +1,6 @@
 pipeline{
     agent any
-parameters {
-  choice choices: ['apply', 'destroy'], description: 'Please choose an action', name: 'Action'
-}
+
 
     stages{
         stage('git checkout '){
@@ -22,16 +20,13 @@ parameters {
         }
         stage('terraform apply'){
             steps{
-               script{
-                 if (params.Action == 'apply'){
+              
                  sh 'terraform apply --auto-approve tffile'
-}
-else if (params.Action == 'destroy'){
-    sh 'terraform destroy --auto-approve '
-}
 
-}
-            }
-        }
+
+             }
+			 }
+            
+			
     }
 }
