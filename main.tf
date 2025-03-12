@@ -56,3 +56,4 @@ resource aws_instance "instance"{
   tags={
     name="instance"
   }
+}
