@@ -59,4 +59,13 @@ resource aws_instance "instance"{
   tags={
     name="instance"
   }
+user_data = <<-EOF
+  #!/bin/bash
+  sudo apt-get update -y
+  sudo apt-get install ansible -y
+  sudo apt-get install git -y
+  cd /home/ubuntu
+  sudo git clone https://github.com/kprasantasg87/Jenkins_test.git 
+  sudo ansible-playbook /home/ubuntu/Jenkins_test/httpd.yml
+EOF
 }
