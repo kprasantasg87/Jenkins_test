@@ -1,0 +1,56 @@
+pipeline{
+    agent any
+parameters {
+  choice choices: ['apply', 'destroy'], description: 'Choose an Action', name: 'Action'
+  string description: 'Please pass a branch name', name: 'Branch'
+}
+ environment {
+  AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
+ AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+}
+
+    stages{
+
+stage('Git Checkout & Create Branch') {
+            steps {
+                script {
+                    // Clone the repo and create the new branch
+                    sh '''
+                    git clone https://github.com/kprasantasg87/Terraform.git
+                    cd Terraform
+                    git checkout -b ${BranchName}
+                    
+                    '''
+                }
+            }
+        }
+        stage('git checkout '){
+            steps{
+                git branch: 'main', url: 'https://github.com/kprasantasg87/Terraform.git'
+            }
+        }
+         stage('terraform init'){
+            steps{
+                sh 'terraform init'
+            }
+        }
+         stage('terraform plan'){
+            steps{
+                sh 'terraform plan  -input=false -out=tffile'
+            }
+        }
+        stage('terraform apply'){
+            steps{
+               script{
+                  if ( params.Action == 'apply'){
+                       sh 'terraform apply  --auto-approve tffile'
+}
+                 else if (params.Action == 'destroy'){
+                        sh 'terraform destroy  --auto-approve '
+}
+               
+             }
+			 }
+           } 	
+    }
+}
