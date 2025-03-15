@@ -14,7 +14,7 @@ parameters {
 
         stage('git checkout '){
             steps{
-                git branch: 'main', url: 'https://github.com/kprasantasg87/Terraform.git'
+                git branch: 'main', url: 'https://github.com/kprasantasg87/Jenkins_test.git'
             }
         }
          stage('terraform init'){
