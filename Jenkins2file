@@ -11,19 +11,7 @@ parameters {
 
     stages{
 
-stage('Git Checkout & Create Branch') {
-            steps {
-                script {
-                    // Clone the repo and create the new branch
-                    sh '''
-                    git clone https://github.com/kprasantasg87/Terraform.git
-                    cd Terraform
-                    git checkout -b ${BranchName}
-                    
-                    '''
-                }
-            }
-        }
+
         stage('git checkout '){
             steps{
                 git branch: 'main', url: 'https://github.com/kprasantasg87/Terraform.git'
