@@ -66,6 +66,7 @@ user_data = <<-EOF
   sudo apt-get install git -y
   cd /home/ubuntu
   sudo git clone https://github.com/kprasantasg87/Jenkins_test.git 
+  sudo git checkout -b ${Branch}
   sudo ansible-playbook /home/ubuntu/Jenkins_test/httpd.yml
  
 EOF
