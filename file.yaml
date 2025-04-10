@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  con1:
+    image: nginx
+    ports:
+      - 8087:80
+    volumes:
+      - /test1:/app
+  con2:
+    image: jenkins/jenkins
+    ports:
+      - 8086:8080
+  con3:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=testtest
